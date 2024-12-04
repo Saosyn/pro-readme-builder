@@ -60,8 +60,8 @@ ${data.test}
 ${data.license}
 
 ## Contact Me
-${data.username}
-${data.email}
+- Visit my GitHub @ ${data.username}
+- ${data.email}
 `;
 }
 

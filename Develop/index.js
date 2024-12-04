@@ -1,13 +1,21 @@
 // TODO: Include packages needed for this application
 import inquirer from 'inquirer';
-const inquirer = require(inquirer);
-const fs = require('fs');
-const path = require('path');
-const generateMarkdown = require('./utils/generateMarkdown');
+// const inquirer = require(inquirer);
+import fs from 'fs';
+// const fs = require('fs');
+import path from 'path';
+// const path = require('path');
+import generateMarkdown from './utils/generateMarkdown.js';
+// const generateMarkdown = require('./utils/generateMarkdown');
 
 // TODO: Create an array of questions for user input
 
 const questions = [
+  {
+    type: 'input',
+    message: 'What is your name?',
+    name: 'name',
+  },
   {
     type: 'input',
     message: 'What is your project name?',
@@ -65,7 +73,7 @@ function writeToFile(fileName, data) {
 function init() {
   inquirer.prompt(questions).then((responses) => {
     console.log('Create pro-readme-file');
-    writeToFile('./dist/README.md', generateMarkdown({ ...responses }));
+    writeToFile('./Develop/dist/README.md', generateMarkdown({ ...responses }));
   });
 }
 
